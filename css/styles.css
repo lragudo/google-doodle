@@ -10,11 +10,12 @@
 } */
 
 
-/* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
- */
+
 /* Doodle Stage */
+/* change this styling-- make it responsive? */
 #stage {
   background: #ccc;
   height: 300px;
   width: 600px;
 }
+
