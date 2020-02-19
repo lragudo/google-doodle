@@ -5,13 +5,16 @@
   * Outline Elements
 */
 
-* {
+/* * {
     outline: 1px dotted black;
-}
-img{
-  width: 50%;
-}
-
-/* body{
-  background: url(../img/cards.jpg);
 } */
+
+
+/* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
+ */
+/* Doodle Stage */
+#stage {
+  background: #ccc;
+  height: 300px;
+  width: 600px;
+}
