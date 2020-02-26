@@ -1,27 +1,36 @@
-/* My Awesome Styles */
-
-/* Diagnostic Styling 
-  * Change Background Color
-  * Outline Elements
-*/
-
 /* * {
     outline: 1px dotted black;
 } */
 
-
-
 /* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
  */
 /* Doodle Stage */
-#stage {
+#stage{
+  /*   background: #ccc; */
     height: 300px;
     width: 600px;
     display: flex;
-    background: white;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    flex-direction: column;
+  }
+  #stage div{
+  /*  background: coral; */
+    height: 300px;
+    width: 600px;
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    flex-direction: row;
+  }
+  
+  /* PART 1 */
+  svg{
+    transform: scale(.7);
   }
   
   #g-low{
@@ -57,13 +66,30 @@
     margin-left: -16px;
   }
   
-  svg{
-    transform: scale(.8);
+  #path{
+    position: absolute;
+    left: 70px;
+    top: 85px;
   }
+  
+  /* PART 2 */
+  #international{
+    position: relative;
+    top: 60px;
+  }
+  
+  #tabletop-day, #international{
+    fill: #3680bf;
+    transform: scale(.6);
+  }
+  
+  svg:not(:root) {
+      overflow: visible;
+  }
+  
   
   #path{
     position: absolute;
     left: 70px;
     top: 85px;
   }
-
