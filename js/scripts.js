@@ -1,79 +1,86 @@
 gsap.registerPlugin(MotionPathPlugin);
+let tl = gsap.timeline({repeat: -1, repeatDelay: 2});
+
 
 // dice role in as well as the pencil
-gsap.to("#nat20", {
+tl.to("#nat20", {
   duration: 2.5,
   rotation: 360,
-  delay: 1,
    motionPath:{
     path: "#path",
     end: .95
-  }});
+  }}, 1);
+  // google comes in at the same time as nat 20
+  tl.from(".google", {
+    opacity: 0,
+    duration: 1
+  }, "<")
+  
 
-gsap.from("#plain20", {
+tl.from("#plain20", {
   y: 200,
   duration: 1.25,
-  rotation: 200,
-  delay: 1.5
-})
+  rotation: 200
+}, 1.5)
 
-gsap.from("#pencil", {
+tl.from("#pencil", {
   y:-300,
-  duration: 1.25,
-  delay: 1.75
-})
+  duration: 1.25
+}, 1.75)
 
 // Remove red dice
-gsap.to("#nat20", {
+tl.to("#nat20", {
   duration: 2.5,
   rotation: 200,
-  delay: 4.5,
   x: -100,
   y: 400  
-})
+}, 4.5)
 
 // Remove yellow dice
-gsap.to("#plain20", {
+tl.to("#plain20", {
   duration: 2.5,
   rotation: 300,
-  delay: 4.5,
   x: -100,
   y: -400  
-})
+}, 4.5)
 
 // Remove pencil
-gsap.to("#pencil", {
-  delay: 4.5,
+tl.to("#pencil", {
   rotation: 150,
   x: 190,
   y: 100,
   duration: 1.25
-})
+}, 4.5)
 
 // Remove gge
-gsap.to(".google", {
-  opacity: 0,
-  delay: 4.5
-})
+tl.to(".google", {
+  opacity: 0
+}, 4.5)
 
 // international title comes in from above
-gsap.fromTo("#international", {
+tl.fromTo("#international", {
   opacity: 0,
   y: -75
 },{
   opacity: 1,
   duration: 3,
   y: 150,
-  delay: 5
-})
+}, 5)
 
 //table-top day comes in from below
-gsap.fromTo("#tabletop-day", {
+tl.fromTo("#tabletop-day", {
   opacity: 0,
   y: 75
 },{
   opacity: 1,
   duration: 3,
-  y: -140,
-  delay: 5
-})
+  y: -140
+}, 5)
+
+//fade out international tabletop day
+tl.to("#international", {
+  opacity: 0
+}, "+=2")
+tl.to("#tabletop-day", {
+  opacity: 0
+}, "<")
